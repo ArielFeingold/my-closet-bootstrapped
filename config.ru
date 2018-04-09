@@ -1,0 +1,13 @@
+require_relative './config/environment'
+
+if ActiveRecord::Migrator.needs_migration?
+  raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
+end
+
+use Rack::MethodOverride
+
+use BsController
+use ItemsController
+use OutfitsController
+use UsersController
+run ApplicationController

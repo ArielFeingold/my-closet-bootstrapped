@@ -1,0 +1,14 @@
+<h1><%=@outfit.name%></h1>
+
+<% @outfit.items.each do |item| %>
+  <ul>
+  <li><a href="/items/<%=item.slug%>"><%=item.name%></a></li>
+</ul>
+<%end%>
+
+<a href="/outfits/<%=@outfit.slug%>/edit">Edit Outfit</a>
+
+<form method="post" action="/outfits/<%=@outfit.slug%>/delete">
+<input id="hidden" type="hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete outfit">
+</form>
