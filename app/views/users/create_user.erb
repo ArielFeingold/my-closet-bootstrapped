@@ -1,12 +1,55 @@
-<h2>Create New Account</h2>
 
-<h3>Sign Up</h3>
-<form action="/signup" method="POST">
-  <p>Name: <input type="text" name="name" required></p>
-  <p>Username: <input type="text" name="username" required></p>
-  <p>Email: <input type="email" name="email" required></p>
-  <p>Password: <input type="text" name="password" required></p>
-  <input class="btn btn-primary" type="submit" Value="Create User">
+<form class="form-horizontal top-buffer i-am-centered" action="/signup" method="POST">
+<fieldset>
+
+<!-- Form Name -->
+<h1>Create New Account</h1>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-8 control-label" for="1">Name</label>
+  <div class="col-md-8">
+  <input name="name" type="text" class="form-control input-md" required>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-8 control-label" for="2">Username</label>
+  <div class="col-md-8">
+  <input name="username" type="text" class="form-control input-md" required>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-8 control-label" for="3">Email</label>
+  <div class="col-md-8">
+  <input name="email" type="text" class="form-control input-md" required>
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-8 control-label" for="5">Enter Password </label>
+  <div class="col-md-8">
+    <input name="password" type="password" placeholder="" class="form-control input-md" required>
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="1"></label>
+  <div class="col-md-8">
+    <button type="submit" class="btn btn-success">Save</button>
+  </div>
+</div>
+
+<div class="">
+  <label class="col-md-8 control-label" for="3">Alredy have a MyCloset?</label>
+  <div class="col-md-8">
+  </label>&nbsp<a href="/login">Log In To Your Account</a>
+  </div>
+</div>
+
+</fieldset>
 </form>
-
-<label>Alredy have a MyCloset?</label><a href="/login">Log InTo Your Account</a>
