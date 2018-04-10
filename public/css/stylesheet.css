@@ -7,6 +7,10 @@
   margin-top:70px;
 }
 
+.top-fuffer-small {
+  margin-top:35px;
+}
+
 body{background: #eee url(http://subtlepatterns.com/patterns/sativa.png);}
 html,body{
     position: relative;

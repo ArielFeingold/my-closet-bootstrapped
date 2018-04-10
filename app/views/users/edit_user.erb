@@ -6,3 +6,15 @@
   <p>Password: <input type="text" name="password" value="<%@user.password%>"></p>
   <input class="btn btn-primary" type="submit" Value="Update">
 </form>
+
+<div class="container">
+  <div class="row i-am-centered top-buffer">
+      <div class="jumbotron">
+        <h2 class="display-4">Edit Profile</h2>
+        <p class="lead">What would you like to do today?</p>
+        <a href="/outfits" class="btn btn-info btn-lg btn-block top-buffer-small">Go To My Outfits</a>
+        <a href="/items" class="btn btn-primary btn-lg btn-block top-buffer-small">Go To My Items</a>
+        <a href="/users/<%=@user.slug%>/edit" class="btn btn-secondary btn-lg btn-block top-buffer-small">Edit Profile</a>
+      </div>
+  </div>
+</div>
