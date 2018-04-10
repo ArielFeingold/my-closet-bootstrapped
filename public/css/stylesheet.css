@@ -17,6 +17,15 @@ html,body{
     color: #3b3f44;
 }
 
+table{
+  border: none;
+  width: 100%;
+  height: 20px;
+}
+th{
+  color: #0e8a8e;
+}
+
 .container{
   min-width: 600px;
 }
