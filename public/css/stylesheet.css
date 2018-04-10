@@ -22,8 +22,26 @@ table{
   width: 100%;
   height: 20px;
 }
+
 th{
   color: #0e8a8e;
+}
+
+input{
+  width: 100%;
+}
+
+a.link-button{
+  color: white;
+}
+
+.item_edit{
+  width 100%;
+}
+
+.jumbotron{
+  min-width: 350px;
+  margin: auto;
 }
 
 .container{
@@ -43,6 +61,10 @@ th{
 
 .top-buffer-xs {
   margin-top:10px;
+}
+
+.inline {
+  float:left;
 }
 
 .site-container{
@@ -127,6 +149,9 @@ th{
   animation-fill-mode: both;
 }
 
+.add-item{
+  font-size: 0.8em;
+}
 #output{
     position: absolute;
     width: 300px;
