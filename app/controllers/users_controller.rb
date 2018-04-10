@@ -19,9 +19,20 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    @user = User.create(params)
-    session[:user_id] = @user.id
-    redirect to "/users/#{@user.slug}"
+    varification = []
+      User.all.each do |user|
+        if user.email = params[:email]
+          varification << user
+        end
+      end
+
+    if varification.size == 0
+      @user = User.create(params)
+      session[:user_id] = @user.id
+      redirect to "/users/#{@user.slug}"
+    else
+      redirect to '/signup-error'
+    end
   end
 
   get '/login' do
@@ -39,12 +50,16 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to "/users/#{@user.slug}"
     else
-      redirect to "/error"
+      redirect to "/login-error"
     end
   end
 
-  get '/error' do
-    erb:'users/error'
+  get '/login-error' do
+    erb:'users/login-error'
+  end
+
+  get '/signup-error' do
+    erb:'users/signup-error'
   end
 
   get '/logout' do
