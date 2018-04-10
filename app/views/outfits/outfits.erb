@@ -4,7 +4,7 @@
         <h2 class="display-4">MyOutfits</h2>
         <p>Choose an Outfit:</p>
         <%if @outfits.size == 0%>
-          <p>No Outfits to show. Click <a href="/outfits/new">HERE</a> to create your first outfit</p>
+          <p>You have no outfits to show, click below to create your first outfit</p>
         <% else %>
           <%@outfits.each do |outfit|%>
           <ul class="list-group">

@@ -8,6 +8,7 @@ a {
 a:hover {
     color: #64686d;
     text-decoration: none;
+    color: white;
 }
 
 body{background: #eee url(http://subtlepatterns.com/patterns/sativa.png);}
