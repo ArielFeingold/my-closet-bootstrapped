@@ -1,14 +1,19 @@
-<h1><%=@outfit.name%></h1>
-
-<% @outfit.items.each do |item| %>
-  <ul>
-  <li><a href="/items/<%=item.slug%>"><%=item.name%></a></li>
-</ul>
-<%end%>
-
-<a href="/outfits/<%=@outfit.slug%>/edit">Edit Outfit</a>
-
-<form method="post" action="/outfits/<%=@outfit.slug%>/delete">
-<input id="hidden" type="hidden" name="_method" value="DELETE">
-<input type="submit" value="Delete outfit">
-</form>
+<div class="container">
+  <div class="row i-am-centered top-buffer">
+      <div class="jumbotron">
+        <h2 class="display-4"><%=@outfit.name.capitalize%></h2>
+        <% @outfit.items.each do |item| %>
+          <ul class="list-group">
+          <li class="list-group-item"><a href="/items/<%=item.slug%>"><%=item.name%></a></li>
+        </ul>
+        <%end%>
+        <a class="btn btn-outline-info top-buffer-xs" href="/outfits/<%=@outfit.slug%>/edit">Edit Outfit</a>
+        <div>
+          <form class="top-buffer-xs" method="post" action="/outfits/<%=@outfit.slug%>/delete">
+          <input  id="hidden" type="hidden" name="_method" value="DELETE">
+          <input type="submit" class="btn btn-outline-info" value="Delete Outfit"></input>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>

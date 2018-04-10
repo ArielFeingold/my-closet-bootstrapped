@@ -1,4 +1,30 @@
-<h1>Create Outfit</h1>
+<div class="container">
+  <div class="row i-am-centered top-buffer">
+      <div class="jumbotron">
+        <h3 class="display-4">Create Outfit</h3>
+        <form action="/outfits" method="POST">
+            <input class="top-fuffer-xs" type="text" name="outfit[name]" placeholder="Enter Name"/required><br></br>
+
+          <label><h4>Choose Items</h4></label> <br>
+
+            <% @user.items.all.each do |item| %>
+              <input type="checkbox" name="outfit[item_ids][]" value="<%= item.id %>">
+              <label>&nbsp<%= item.name %>, <%=item.category%></label><br>
+            <% end %>
+
+          <input class="btn btn-outline-info btn-bloc top-fuffer-xs" type="submit" value="Create New Outfit">
+        </form>
+        <div class="top-fuffer-xs">
+          <a class="top-fuffer-xs" href="/items/new">Add New item</a>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<!-- <h1>Create Outfit</h1>
 
 <form action="/outfits" method="POST">
   <lable>Name</label>
@@ -12,4 +38,4 @@
     <% end %>
 
   <input type="submit" value="Create New Outfit">
-</form>
+</form> -->
