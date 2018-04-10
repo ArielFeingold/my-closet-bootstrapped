@@ -6,7 +6,6 @@ end
 
 use Rack::MethodOverride
 
-use BsController
 use ItemsController
 use OutfitsController
 use UsersController
