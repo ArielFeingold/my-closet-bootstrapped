@@ -1,20 +1,41 @@
-<h1>Edit User</h1>
+<!-- <h1>Edit User</h1>
 
 <form action="/users/<%=@user.slug%>" method="POST">
 <input type="hidden" name="_method" value="PATCH">
   <p>Name: <input type="text" name="name" value="<%@user.name%>"></p>
   <p>Password: <input type="text" name="password" value="<%@user.password%>"></p>
   <input class="btn btn-primary" type="submit" Value="Update">
-</form>
+</form> -->
 
+<form action="/users/<%=@user.slug%>" method="POST">
+<input type="hidden" name="_method" value="PATCH">
 <div class="container">
   <div class="row i-am-centered top-buffer">
       <div class="jumbotron">
         <h2 class="display-4">Edit Profile</h2>
-        <p class="lead">What would you like to do today?</p>
-        <a href="/outfits" class="btn btn-info btn-lg btn-block top-buffer-small">Go To My Outfits</a>
-        <a href="/items" class="btn btn-primary btn-lg btn-block top-buffer-small">Go To My Items</a>
-        <a href="/users/<%=@user.slug%>/edit" class="btn btn-secondary btn-lg btn-block top-buffer-small">Edit Profile</a>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-8 control-label" for="3">Change Name</label>
+          <div class="col-md-8">
+          <input name="name" type="text" class="form-control input-md" value="<%@user.name%>" required>
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+          <label class="col-md-8 control-label" for="5">Change Password </label>
+          <div class="col-md-8">
+            <input name="password" type="password" class="form-control input-md" value="<%@user.password%>" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label" ></label>
+          <div class="col-md-8">
+            <button class="btn btn-info btn-block login" type="submit">Save Changes</button>
+          </div>
+        </div>
       </div>
   </div>
 </div>
+</form>
