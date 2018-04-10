@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       session.destroy
       redirect to '/'
     else
-      redirect to '/login'
+      redirect to '/'
     end
   end
 
@@ -62,20 +62,28 @@ class UsersController < ApplicationController
   end
 
   get '/users/:slug/edit' do
-    @user = User.find_by_slug(params[:slug])
-    erb :'users/edit_user'
+    if logged_in?
+      @user = User.find_by_slug(params[:slug])
+      erb :'users/edit_user'
+    else
+      redirect to '/'
+    end
   end
 
   patch '/users/:slug' do
-    @user = User.find_by_slug(params[:slug])
-    if params[:name] != ""
-      @user.name = params[:name]
+    if logged_in?
+      @user = User.find_by_slug(params[:slug])
+      if params[:name] != ""
+        @user.name = params[:name]
+      end
+      if params[:password] !=""
+        @user.password = params[:password]
+      end
+      @user.save
+      redirect to "/users/#{@user.slug}"
+    else
+      redirect to '/'
     end
-    if params[:password] !=""
-      @user.password = params[:password]
-    end
-    @user.save
-    redirect to "/users/#{@user.slug}"
   end
 
 end
