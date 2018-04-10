@@ -1,3 +1,31 @@
+<div class="container">
+  <div class="row i-am-centered top-buffer">
+      <div class="jumbotron">
+        <h3 class="display-4">Create Item</h3>
+        <form action="/items" method="POST">
+          <label>Name</label><br>
+          <input type="text" name="name"/required><br>
+          <label class="top-buffer-xs">Category</label><br>
+          <select name="category">
+          <option value="shirts">Shirt</option>
+          <option value="coat">Coat</option>
+          <option value="jacket">Jacket</option>
+          <option value="pants">Pants</option>
+          <option value="shoes">Shoes</option>
+          <option value="accessories">Accessories</option>
+        </select><br>
+          <label class="top-buffer-xs">Type</label><br>
+          <input type="text" name="item_type" /required><br>
+          <label class="top-buffer-xs">Color</label><br>
+          <input type="text" name="color" /required><br>
+
+          <input class="top-buffer-xs btn btn-outline-info btn-block" type="submit" value="Create New Item">
+        </form>
+      </div>
+    </div>
+  </div>
+
+
 <h1>Create Item</h1>
 
 <form action="/items" method="POST">
